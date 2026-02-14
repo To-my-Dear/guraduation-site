@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>卒業おめでとうございます</title>
+  <link rel="stylesheet" href="index_style.css">
+</head>
+
+<body>
+
+  <div class="sakura-bg"></div>
+
+  <div class="container">
+    <h1 class="fade-in">四年間、本当にお疲れさまでした。</h1>
+    <p class="subtitle fade-in">春の門出に、祝福申し上げます。</p>
+
+    <img src="Syugou.jpg" alt="集合写真" class="group-photo">
+
+    <div class="buttons">
+      <a href="senpai1.html" class="button">中里先輩</a>
+      <a href="senpai2.html" class="button">中村先輩</a>
+      <a href="senpai3.html" class="button">西尾先輩</a>
+      <a href="senpai4.html" class="button">山尾先輩</a>
+    </div>
+  </div>
+
+<div class="petals"></div>
+
+<script>
+const petalsContainer = document.querySelector('.petals');
+
+function createPetal() {
+  const petal = document.createElement('div');
+  petal.classList.add('petal');
+
+  petal.style.left = Math.random() * 100 + "vw";
+  petal.style.animationDuration = (5 + Math.random() * 5) + "s";
+  petal.style.opacity = Math.random();
+
+  petalsContainer.appendChild(petal);
+
+  setTimeout(() => {
+    petal.remove();
+  }, 10000);
+}
+
+setInterval(createPetal, 800);
+</script>
+
+</body>
+</html>
